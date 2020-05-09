@@ -14,7 +14,9 @@ public class Program {
         Department novo = new Department(1, "books");
         
         SellerDao sellerDao = DaoFactory.createSellerDao();
-        
+        Seller seller = sellerDao.findById(2);
+                
+                
         Seller vendedor = new Seller(21, "Joao", "joao@gmail.com", new Date(), 10000.00, novo);
         System.out.println(vendedor);
     }
