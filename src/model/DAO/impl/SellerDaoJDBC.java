@@ -2,6 +2,7 @@
 package model.DAO.impl;
 
 import com.mysql.jdbc.Statement;
+import db.DB;
 import db.DbException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -90,7 +91,21 @@ public class SellerDaoJDBC  implements SellerDao{
 
     @Override
     public void deleteById(Integer Id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement st = null;
+        try{
+            st = conn.prepareStatement(
+                "DELETE FROM seller "
+                +"WHERE Id = ?");
+            
+            st.setInt(1, Id);
+            st.executeUpdate();
+        }
+        catch(SQLException e){
+            throw new DbException(e.getMessage());
+        }
+        finally {
+            DB.closeStatement(st);
+        }
     }
 
     @Override
