@@ -1,6 +1,7 @@
 
 package model.DAO.impl;
 
+import com.mysql.jdbc.Statement;
 import db.DbException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +26,40 @@ public class SellerDaoJDBC  implements SellerDao{
     
     @Override
     public void insert(Seller obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement st = null;
+        try{
+            st = conn.prepareStatement(
+                    "INSERT INTO seller "
+                    +"(Name, Email, BirthDate, BaseSalary, DepartmentId) "
+                    +"VALUES "
+                    +"(?, ?, ?, ?, ?)",
+                    Statement.RETURN_GENERATED_KEYS);
+            
+            st.setString(1, obj.getName());
+            st.setString(2, obj.getEmail());
+            st.setDate(3, new java.sql.Date(obj.getBirthDate().getTime()));
+            st.setDouble(4, obj.getBaseSalary());
+            st.setInt(5, obj.getDepartment().getId());
+            
+            int rowsAffected = st.executeUpdate();
+            if (rowsAffected > 0){
+                ResultSet rs = st.getGeneratedKeys();
+                if (rs.next()){
+                    int id = rs.getInt(1);
+                    obj.setId(id);
+                }
+                db.DB.closeResultSet(rs);
+                
+            } else{
+                throw new DbException("Erro inesperado, nenhuma linha alterada!");
+            }
+        }
+        catch(SQLException e){
+            throw new DbException(e.getMessage());
+        }
+        finally {
+            db.DB.closeStatement(st);
+        }
     }
 
     @Override

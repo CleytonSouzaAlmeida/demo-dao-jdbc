@@ -31,5 +31,10 @@ public class Program {
         for (Seller e : list){
             System.out.println(e);
         }        
+        
+        System.out.println("\n====== Test 3 seller findAll =======");
+        Seller newseller = new Seller(null, "Karl", "karl@springfield.com", new Date(), 20000.00, dep);
+        sellerDao.insert(newseller);
+        System.out.println("Inserido! novo Id = " + newseller.getId());
     }
 }
