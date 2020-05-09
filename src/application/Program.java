@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import model.DAO.DaoFactory;
+import model.DAO.DepartmentDao;
 import model.DAO.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -51,5 +52,7 @@ public class Program {
         sellerDao.deleteById(id);
         System.out.println("Delete concluido!");
         input.close();
+        
+        
     }
 }
