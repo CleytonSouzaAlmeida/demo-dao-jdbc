@@ -13,6 +13,7 @@ public class Program {
         
         Department novo = new Department(1, "books");
         
+        System.out.println("====== Test 1 seller findById =======");
         SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = sellerDao.findById(2);
                 
