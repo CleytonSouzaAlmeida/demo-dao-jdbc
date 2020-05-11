@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/model/entities/Seller.java</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/model/DAO/SellerDao.java</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/application/Program.java</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/model/DAO/DepartmentDao.java</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/demo/dao/jdbc/DemoDaoJdbc.java</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/db/db.properties</file>
-            <file>file:/C:/Users/Cleyton/Documents/NetBeansProjects/Curso_Java/demo-dao-jdbc/src/model/entities/Department.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
